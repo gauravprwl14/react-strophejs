@@ -1,44 +1,67 @@
-/*
-    This program is distributed under the terms of the MIT license.
-    Please see the LICENSE file for details.
+// /*
+//     This program is distributed under the terms of the MIT license.
+//     Please see the LICENSE file for details.
 
-    Copyright 2006-2008, OGG, LLC
-*/
+//     Copyright 2006-2008, OGG, LLC
+// */
 
-/* jshint undef: true, unused: true:, noarg: true, latedef: true */
-/*global define, document, sessionStorage, setTimeout, clearTimeout, ActiveXObject, DOMParser, btoa, atob */
+// /* jshint undef: true, unused: true:, noarg: true, latedef: true */
+// /*global define, document, sessionStorage, setTimeout, clearTimeout, ActiveXObject, DOMParser, btoa, atob */
 
-(function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define([
-            'strophe-sha1',
-            'strophe-md5',
-            'strophe-utils'
-        ], function () {
-            return factory.apply(this, arguments);
-        });
-    }  else if (typeof exports === 'object') {
-        module.exports = factory(
-            require('./sha1'),
-            require('./md5'),
-            require('./utils')
-        );
-    } else {
-        // Browser globals
-        var o = factory(root.SHA1, root.MD5, root.stropheUtils);
-        root.Strophe =        o.Strophe;
-        root.$build =         o.$build;
-        root.$iq =            o.$iq;
-        root.$msg =           o.$msg;
-        root.$pres =          o.$pres;
-        root.SHA1 =           o.SHA1;
-        root.MD5 =            o.MD5;
-        root.b64_hmac_sha1 =  o.SHA1.b64_hmac_sha1;
-        root.b64_sha1 =       o.SHA1.b64_sha1;
-        root.str_hmac_sha1 =  o.SHA1.str_hmac_sha1;
-        root.str_sha1 =       o.SHA1.str_sha1;
-    }
-}(this, function (SHA1, MD5, utils) {
+// // (function (root, factory) {
+// //     if (typeof define === 'function' && define.amd) {
+// //         define([
+// //             'strophe-sha1',
+// //             'strophe-md5',
+// //             'strophe-utils'
+// //         ], function () {
+// //             return factory.apply(this, arguments);
+// //         });
+// //     }  else if (typeof exports === 'object') {
+// //         module.exports = factory(
+// //             require('./sha1'),
+// //             require('./md5'),
+// //             require('./utils')
+// //         );
+// //     } else {
+// //         // Browser globals
+// //         var o = factory(root.SHA1, root.MD5, root.stropheUtils);
+// //         root.Strophe =        o.Strophe;
+// //         root.$build =         o.$build;
+// //         root.$iq =            o.$iq;
+// //         root.$msg =           o.$msg;
+// //         root.$pres =          o.$pres;
+// //         root.SHA1 =           o.SHA1;
+// //         root.MD5 =            o.MD5;
+// //         root.b64_hmac_sha1 =  o.SHA1.b64_hmac_sha1;
+// //         root.b64_sha1 =       o.SHA1.b64_sha1;
+// //         root.str_hmac_sha1 =  o.SHA1.str_hmac_sha1;
+// //         root.str_sha1 =       o.SHA1.str_sha1;
+// //     }
+// // }(this, function (SHA1, MD5, utils) {
+
+
+
+
+// return {
+//     'Strophe':         Strophe,
+//     '$build':          $build,
+//     '$iq':             $iq,
+//     '$msg':            $msg,
+//     '$pres':           $pres,
+//     'SHA1':            SHA1,
+//     'MD5':             MD5,
+//     'b64_hmac_sha1':   SHA1.b64_hmac_sha1,
+//     'b64_sha1':        SHA1.b64_sha1,
+//     'str_hmac_sha1':   SHA1.str_hmac_sha1,
+//     'str_sha1':        SHA1.str_sha1
+// };
+// }));
+
+var SHA1 = require('./sha1');
+var MD5 = require('./md5');
+var utils = require('./utils');
+require('./polyfills');
 
 var Strophe;
 
@@ -3694,8 +3717,7 @@ Strophe.SASLXOAuth2.prototype.onChallenge = function (connection) {
     return utils.utf16to8(auth_str);
 };
 
-
-return {
+module.exports = {
     'Strophe':         Strophe,
     '$build':          $build,
     '$iq':             $iq,
@@ -3708,4 +3730,3 @@ return {
     'str_hmac_sha1':   SHA1.str_hmac_sha1,
     'str_sha1':        SHA1.str_sha1
 };
-}));
