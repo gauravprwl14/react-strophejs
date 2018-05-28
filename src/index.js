@@ -1,3 +1,3 @@
-var strophe = require("./core");
+var strophe = require("./wrapper");
 
 module.exports = strophe;
