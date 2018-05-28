@@ -1,14 +1,25 @@
 {
   "name": "react-strophe",
   "description": "Strophe.js is an XMPP library for JavaScript",
-  "version": "1.2.15.1",
+  "version": "1.2.15.2",
   "homepage": "http://strophe.im/strophejs",
   "repository": {
     "type": "git",
     "url": "git://github.com/strophe/strophejs.git"
   },
-  "keywords": ["xmpp", "message", "bosh", "websocket", "browser"],
-  "files": ["CHANGELOG.txt", "LICENSE.txt", "README.txt", "src/"],
+  "keywords": [
+    "xmpp",
+    "message",
+    "bosh",
+    "websocket",
+    "browser"
+  ],
+  "files": [
+    "CHANGELOG.txt",
+    "LICENSE.txt",
+    "README.txt",
+    "src/"
+  ],
   "author": "Jack Moffit (metajack)",
   "contributors": [
     "Nathan Zorn (thepug)",
@@ -31,8 +42,7 @@
     "doc": "make doc"
   },
   "volo": {
-    "url":
-      "https://raw.githubusercontent.com/strophe/strophejs/release-{version}/strophe.js"
+    "url": "https://raw.githubusercontent.com/strophe/strophejs/release-{version}/strophe.js"
   },
   "devDependencies": {
     "almond": "~0.3.0",

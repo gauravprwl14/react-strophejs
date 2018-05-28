@@ -542,17 +542,17 @@ module.exports = Strophe;
 /* jshint undef: true, unused: true:, noarg: true, latedef: true */
 /* global define, window, clearTimeout, WebSocket, DOMParser, Strophe, $build */
 
-(function(root, factory) {
-  if (typeof define === "function" && define.amd) {
-    define(["strophe-core"], function(core) {
-      return factory(core.Strophe, core.$build);
-    });
-  } else if (typeof exports === "object") {
-    var core = require("./core");
+// (function(root, factory) {
+//   if (typeof define === "function" && define.amd) {
+//     define(["strophe-core"], function(core) {
+//       return factory(core.Strophe, core.$build);
+//     });
+//   } else if (typeof exports === "object") {
+//     var core = require("./core");
 
-    module.exports = factory(core.Strophe, core.$build);
-  } else {
-    // Browser globals
-    return factory(Strophe, $build);
-  }
-})(this, function(Strophe, $build) {});
+//     module.exports = factory(core.Strophe, core.$build);
+//   } else {
+//     // Browser globals
+//     return factory(Strophe, $build);
+//   }
+// })(this, function(Strophe, $build) {});
