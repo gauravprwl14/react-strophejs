@@ -35,7 +35,7 @@
     "JC Brand (jcbrand)"
   ],
   "license": "MIT",
-  "main": "strophe.js",
+  "main": "src/index.js",
   "browser": "strophe.js",
   "scripts": {
     "lint": "make jshint",
